@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+@theme {
+  --color-pink: #F48FB1;
+  --color-peach: #FFE0D6;
+  --color-lavender: #B39DDB;
+  --color-deep-pink: #E91E8C;
+  --color-rose: #F06292;
+  --color-text-dark: #1A1A2E;
+  --color-text-mid: #4A4A6A;
+  --color-text-light: #8A8AAA;
+
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-2xl: 48px;
+
+  --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 30px 60px rgba(244, 143, 177, 0.15);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-heading: var(--font-manrope);
+  --font-body: var(--font-poppins);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-dark);
+  background: #fff;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Gradients */
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #E91E8C 0%, #F48FB1 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 10, 46, 0.75) 0%,
+    rgba(233, 30, 140, 0.45) 50%,
+    rgba(179, 157, 219, 0.35) 100%
+  );
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #E91E8C 0%, #B39DDB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-padding {
+  @apply py-16 md:py-24 px-6;
+}
+
+/* Animation utilities */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-2;
 }
