@@ -28,28 +28,28 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-6",
         isScrolled ? "py-3" : "py-6"
       )}
     >
       <div className={cn(
-        "container mx-auto flex items-center justify-between transition-all duration-500 rounded-full px-6 py-3",
+        "container mx-auto flex items-center justify-between transition-all duration-500 rounded-full px-4 md:px-6 py-3",
         isScrolled ? "glass-morphism shadow-premium" : "bg-transparent"
       )}>
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-primary-gradient rounded-xl flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary-gradient rounded-xl flex items-center justify-center text-lg md:text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
             🌸
           </div>
           <div className="flex flex-col">
             <span className={cn(
-              "text-sm font-bold tracking-tight leading-none transition-colors",
+              "text-[12px] md:text-sm font-bold tracking-tight leading-none transition-colors",
               isScrolled ? "text-text-dark" : "text-white md:text-text-dark"
             )}>
               Motherhood
             </span>
             <span className={cn(
-              "text-[10px] font-medium opacity-60",
+              "text-[9px] md:text-[10px] font-medium opacity-60",
               isScrolled ? "text-text-light" : "text-white/80 md:text-text-light"
             )}>
               Chennai
@@ -74,7 +74,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <Link
             href="tel:08069549251"
             className={cn(
@@ -88,7 +88,7 @@ const Navbar = () => {
           
           <Link
             href="#booking"
-            className="bg-primary-gradient text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg hover:shadow-deep-pink/30 hover:-translate-y-0.5 transition-all active:scale-95"
+            className="bg-primary-gradient text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[11px] md:text-sm font-bold whitespace-nowrap shadow-lg hover:shadow-deep-pink/30 hover:-translate-y-0.5 transition-all active:scale-95"
           >
             Book Free Consult
           </Link>
